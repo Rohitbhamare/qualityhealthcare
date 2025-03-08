@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Healthcare Services - Professional Healthcare Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --primary-color: #1d3e4c;
+            --primary-dark: #152c36;
+            --primary-light: #2a5a6e;
+            --secondary-color: #c5a059;
+            --secondary-light: #d9bc85;
+            --secondary-dark: #a88440;
+            --accent-color: #3a7ca5;
+            --text-color: #2b2d42;
+            --text-light: #6c757d;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-radius: 10px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --box-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+
+        .text-secondary-custom {
+            color: var(--secondary-color);
+        }
+
+        .bg-primary-custom {
+            background-color: var(--primary-color);
+        }
+
+        .bg-secondary-custom {
+            background-color: var(--secondary-color);
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-padding-sm {
+            padding: 80px 0;
+        }
+
+        /* Top Contact Bar */
+        .top-bar {
+            background-color: var(--primary-color);
+            padding: 8px 0;
+            color: white;
+        }
+
+        .top-bar-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-bar-contact a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-contact i {
+            color: var(--secondary-color);
+        }
+
+        .consultation-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+            display: inline-block;
+        }
+
+        .consultation-btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .navbar-brand i {
+            color: var(--secondary-color);
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 8px 16px !important;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(29, 62, 76, 0.9), rgba(58, 124, 165, 0.8)),
+                url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDMpIj48L3JlY3Q+PHBhdGggZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA3KSIgZD0iTTAgMGg0MHY0MEgweiI+PC9wYXRoPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSI+PC9yZWN0Pjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title span {
+            color: var(--secondary-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button.outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-button.outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJyZ2JhKDI0NSwgMjQ1LCAyNDUsIDAuOCkiPjwvcmVjdD48cGF0aCBmaWxsPSJyZ2JhKDI0NSwgMjQ1LCAyNDUsIDAuOCkiIGQ9Ik0wIDBoNDB2NDBIMHoiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .section-title-container {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            margin-bottom: 30px;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .service-card:hover::before {
+            height: 8px;
+        }
+
+        .service-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+            position: relative;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .service-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-title::after {
+            width: 80px;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            gap: 12px;
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--bg-color);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(197, 160, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--secondary-color);
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon i {
+            color: white;
+        }
+
+        .feature-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Founder Section */
+        .founder {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-color: rgba(29, 62, 76, 0.03);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 0;
+        }
+
+        .founder-image {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            z-index: -1;
+        }
+
+        .founder-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-hover);
+            position: relative;
+        }
+
+        .founder-name {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .founder-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .founder-description {
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+
+        .founder-stats {
+            display: flex;
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+        }
+
+        .founder-stat {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(29, 62, 76, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            margin-bottom: 15px;
+        }
+
+        .founder-stat:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .founder-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .founder-stat:hover .founder-stat-number {
+            color: var(--secondary-color);
+        }
+
+        .founder-stat-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--bg-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJyZ2JhKDI0NSwgMjQ1LCAyNDUsIDAuOCkiPjwvcmVjdD48cGF0aCBmaWxsPSJyZ2JhKDI0NSwgMjQ1LCAyNDUsIDAuOCkiIGQ9Ik0wIDBoNDB2NDBIMHoiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .testimonial-author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .testimonial-author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-rating {
+            margin-top: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: white;
+            position: relative;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            aspect-ratio: 1 / 1;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(29, 62, 76, 0.8), rgba(29, 62, 76, 0.4));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            color: white;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 1rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-title {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--bg-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJyZ2JhKDI0NSwgMjQ1LCAyNDUsIDAuOCkiPjwvcmVjdD48cGF0aCBmaWxsPSJyZ2JhKDI0NSwgMjQ1LCAyNDUsIDAuOCkiIGQ9Ik0wIDBoNDB2NDBIMHoiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-info-description {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(197, 160, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .contact-info-content p,
+        .contact-info-content a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info-content a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .contact-form-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            position: relative;
+        }
+
+        .footer-top {
+            padding: 80px 0 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-link i {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-icon {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .footer-contact-text {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact-text a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-contact-text a:hover {
+            color: white;
+        }
+
+        .address-bar {
+            background-color: var(--primary-dark);
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .address-bar p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .address-bar i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-padding {
+                padding: 80px 0;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .founder-name {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .top-bar-contact {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .consultation-btn {
+                margin-top: 10px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .founder-image::before {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="top-bar-contact">
+                        <a href="tel:+918605074717">
+                            <i class="fas fa-phone-alt"></i>
+                            +91 8605074717
+                        </a>
+                        <a href="mailto:info@qualityhcs.in">
+                            <i class="fas fa-envelope"></i>
+                            info@qualityhcs.in
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end text-center mt-2 mt-md-0">
+                    <a href="#contact" class="consultation-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Get a Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- <i class="fas fa-heartbeat"></i> -->
+                <img src="logo.png" alt="logo" width="150px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#founder">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 hero-content">
+                    <h1 class="hero-title" data-aos="fade-up">Quality <span>Healthcare</span> Services</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Providing professional healthcare
+                        staffing and support services to meet
+                        all your medical facility needs.</p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#services" class="cta-button">
+                            <i class="fas fa-list-alt"></i>
+                            Explore Our Services
+                        </a>
+                        <a href="#contact" class="cta-button outline">
+                            <i class="fas fa-phone-alt"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-title-container" data-aos="fade-up">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-description">We provide comprehensive healthcare staffing and support services
+                    tailored to meet the unique needs of medical facilities and patients.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Recruitment Services">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Recruitment</h3>
+                            <p class="service-description">Professional staffing solutions for healthcare facilities,
+                                connecting qualified medical professionals with the right opportunities.</p>
+                            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Corporate Support Services">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Corporate Support Services</h3>
+                            <p class="service-description">Comprehensive support services for corporate healthcare
+                                needs,
+                                including wellness programs and medical staffing.</p>
+                            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Hospital Support Services">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Hospital Support Services</h3>
+                            <p class="service-description">Specialized support services for hospitals, including
+                                administrative staff, technicians, and medical assistants.</p>
+                            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Patient Care Services">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Patient Care Services</h3>
+                            <p class="service-description">Dedicated patient care services with compassionate and
+                                skilled
+                                healthcare professionals focused on patient well-being.</p>
+                            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Housekeeping Services">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Housekeeping Services</h3>
+                            <p class="service-description">Professional housekeeping services for healthcare facilities,
+                                ensuring clean and sanitized environments for patients and staff.</p>
+                            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+                                alt="Home Care Services">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Home Care Services</h3>
+                            <p class="service-description">Personalized home care services providing medical assistance
+                                and
+                                support in the comfort of patients' homes.</p>
+                            <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section-padding">
+        <div class="container">
+            <div class="section-title-container" data-aos="fade-up">
+                <span class="section-subtitle">Why Choose Us</span>
+                <h2 class="section-title">Our Advantages</h2>
+                <p class="section-description">We are committed to providing exceptional healthcare services with a
+                    focus on quality, reliability, and compassionate care.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="feature-title">Qualified Professionals</h3>
+                        <p class="feature-description">Our team consists of highly qualified and experienced healthcare
+                            professionals dedicated to providing exceptional care.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 Availability</h3>
+                        <p class="feature-description">We provide round-the-clock services to meet your healthcare
+                            staffing needs whenever you need us.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="feature-title">Compassionate Care</h3>
+                        <p class="feature-description">Our professionals deliver services with empathy and dedication to
+                            patient well-being and comfort.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="feature-title">Quality Assurance</h3>
+                        <p class="feature-description">We maintain high standards of quality in all our healthcare
+                            services through rigorous training and oversight.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="founder section-padding">
+        <div class="container">
+            <div class="section-title-container" data-aos="fade-up">
+                <span class="section-subtitle">Leadership</span>
+                <h2 class="section-title">Meet Our Founder</h2>
+                <p class="section-description">Learn about the visionary behind Quality Healthcare Services and our
+                    commitment to excellence.</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="founder-image">
+                        <img src="akash.png" alt="Mr. Akash S. Sawakar" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="founder-content">
+                        <h3 class="founder-name">Mr. Akash S. Sawakar</h3>
+                        <p class="founder-title">Founder & CEO</p>
+                        <p class="founder-description">With over 15 years of experience in the healthcare industry, Mr.
+                            Akash S. Sawakar founded Quality Healthcare Services with a vision to provide exceptional
+                            healthcare staffing and support services. His dedication to quality and patient care has
+                            established our company as a trusted name in the healthcare sector.</p>
+                        <p class="founder-description">Under his leadership, Quality Healthcare Services has grown to
+                            serve
+                            numerous healthcare facilities across Maharashtra, delivering professional and compassionate
+                            care to thousands of patients.</p>
+                        <p class="founder-description">Mr. Sawakar holds a Master's degree in Healthcare Administration
+                            and
+                            is committed to continuous improvement in healthcare service delivery.</p>
+
+                        <div class="row founder-stats">
+                            <div class="col-md-4">
+                                <div class="founder-stat">
+                                    <span class="founder-stat-number">15+</span>
+                                    <span class="founder-stat-text">Years Experience</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="founder-stat">
+                                    <span class="founder-stat-number">500+</span>
+                                    <span class="founder-stat-text">Clients Served</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="founder-stat">
+                                    <span class="founder-stat-number">1000+</span>
+                                    <span class="founder-stat-text">Healthcare Staff</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title-container" data-aos="fade-up">
+                <span class="section-subtitle">Client Feedback</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">Hear from healthcare facilities and patients who have experienced our
+                    quality services.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right testimonial-quote"></i>
+                        <p class="testimonial-text">Quality Healthcare Services has been instrumental in providing our
+                            hospital with qualified and dedicated staff. Their recruitment process ensures we get the
+                            best
+                            professionals for our needs.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Dr. Rajesh Sharma">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <h4>Dr. Rajesh Sharma</h4>
+                                <p>Medical Director, City Hospital</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right testimonial-quote"></i>
+                        <p class="testimonial-text">The home care services provided by Quality Healthcare Services have
+                            been
+                            exceptional. The nurses are professional, compassionate, and truly care about their
+                            patients'
+                            well-being.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Mrs. Priya Patel">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <h4>Mrs. Priya Patel</h4>
+                                <p>Patient's Family Member</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right testimonial-quote"></i>
+                        <p class="testimonial-text">We've partnered with Quality Healthcare Services for our corporate
+                            wellness program, and the results have been outstanding. Their team is responsive,
+                            professional,
+                            and delivers excellent service.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Mr. Vikram Singh">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <h4>Mr. Vikram Singh</h4>
+                                <p>HR Director, Tech Solutions Ltd.</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section-padding">
+        <div class="container">
+            <div class="section-title-container" data-aos="fade-up">
+                <span class="section-subtitle">Our Facilities</span>
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-description">Take a visual tour of our facilities and see our healthcare professionals
+                    in action.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
+                            alt="Modern Healthcare Facility" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">State-of-the-art Facility</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Professional Staff" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Professional Healthcare Staff</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Patient Care" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Compassionate Patient Care</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="Home Care Services" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Professional Home Care</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-title-container" data-aos="fade-up">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-description">Have questions or need our services? Reach out to us today and our team
+                    will be happy to assist you.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3 class="contact-info-title">Contact Information</h3>
+                        <p class="contact-info-description">Feel free to reach out to us through any of the following
+                            channels. We're here to help with all your healthcare staffing and support needs.</p>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>Our Location</h4>
+                                <p>Office No. 18, Shubharambh Apt, near Irrigation Colony, Ramkrishna Nagar,
+                                    Makhmalabad,
+                                    Nashik, Maharashtra 422003</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>Phone Number</h4>
+                                <p><a href="tel:+918605074717">+91 8605074717</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>Email Address</h4>
+                                <p><a href="mailto:info@qualityhcs.in">info@qualityhcs.in</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h3 class="contact-form-title">Send Us a Message</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" id="name" class="form-control" placeholder="Enter your name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Your Email</label>
+                                        <input type="email" id="email" class="form-control"
+                                            placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" id="phone" class="form-control"
+                                            placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="service" class="form-label">Service Interested In</label>
+                                        <select id="service" class="form-control" required>
+                                            <option value="" disabled selected>Select a service</option>
+                                            <option value="recruitment">Recruitment</option>
+                                            <option value="corporate">Corporate Support Services</option>
+                                            <option value="hospital">Hospital Support Services</option>
+                                            <option value="patient">Patient Care Services</option>
+                                            <option value="housekeeping">Housekeeping Services</option>
+                                            <option value="home">Home Care Services</option>
+                                            <option value="nursing">Nursing Care Services</option>
+                                            <option value="other">Other Support Services</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea id="message" class="form-control"
+                                    placeholder="Tell us about your requirements" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-section footer-about">
+                            <h3>Quality Healthcare Services</h3>
+                            <p>Providing professional healthcare staffing and support services to meet all your medical
+                                facility
+                                needs. We are committed to excellence in healthcare service delivery.</p>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://wa.me/918605074717" class="social-icon"><i
+                                        class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-section">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="#home" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                                </li>
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Services</a>
+                                </li>
+                                <li><a href="#founder" class="footer-link"><i class="fas fa-chevron-right"></i> About
+                                        Us</a>
+                                </li>
+                                <li><a href="#testimonials" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Testimonials</a></li>
+                                <li><a href="#gallery" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Gallery</a></li>
+                                <li><a href="#contact" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <div class="footer-section">
+                            <h3>Our Services</h3>
+                            <ul class="footer-links">
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Recruitment</a>
+                                </li>
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Corporate
+                                        Support</a></li>
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                        Hospital
+                                        Support</a></li>
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i> Patient
+                                        Care</a></li>
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i> Home
+                                        Care</a>
+                                </li>
+                                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i> Nursing
+                                        Care</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-section">
+                            <h3>Contact Information</h3>
+                            <div class="footer-contact-item">
+                                <div class="footer-contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    <p><a href="tel:+918605074717">+91 8605074717</a></p>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item">
+                                <div class="footer-contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    <p><a href="mailto:info@qualityhcs.in">info@qualityhcs.in</a></p>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item">
+                                <div class="footer-contact-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    <p><a href="https://www.qualityhcs.in">www.qualityhcs.in</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="address-bar">
+            <div class="container">
+                <p><i class="fas fa-map-marker-alt"></i> Office No. 18, Shubharambh Apt, near Irrigation Colony,
+                    Ramkrishna Nagar, Makhmalabad, Nashik, Maharashtra 422003</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Quality Healthcare Services. All rights reserved. | Designed with <i class="fas fa-heart"
+                    style="color: var(--secondary-color);"></i> for better healthcare</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const topBarHeight = document.querySelector('.top-bar').offsetHeight;
+                    const totalOffset = navbarHeight;
+
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - totalOffset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form validation
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+
+</html>
